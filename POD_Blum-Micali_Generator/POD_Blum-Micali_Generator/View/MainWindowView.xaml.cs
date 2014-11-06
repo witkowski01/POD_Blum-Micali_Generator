@@ -64,9 +64,9 @@ namespace POD_Blum_Micali_Generator
 
         private void generuj_Click(object sender, RoutedEventArgs e)
         {
-            int x0=0 ;
-            int xn=0 ;
-            int tmp=0;
+            long x0=0 ;
+            long xn=0 ;
+            long tmp=0;
             x0 = bmg.genX0();
             StreamWriter SW;
 

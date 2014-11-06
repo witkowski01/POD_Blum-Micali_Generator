@@ -9,7 +9,8 @@ namespace POD_Blum_Micali_Generator.Model
 {
     class BMG
     {
-        private int a = 0, p = 0, x0 = 0, xn = 0, s1 = 0;
+        private int a = 0, p = 0, x0 = 0,  s1 = 0;
+        private long xn = 0;
         LPG Lp = new LPG();
         X0G Xo=new X0G();
         XnG Xn=new XnG();
@@ -34,7 +35,7 @@ namespace POD_Blum_Micali_Generator.Model
 
         }
 
-        public int genBM(int x_n)
+        public long genBM(long x_n)
         {
             
             xn = Xn.Xn(a, x_n, p);
