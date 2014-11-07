@@ -1,0 +1,18 @@
+﻿<Window x:Class="POD_Blum_Micali_Generator.View.BMAut"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BMAut" Height="600" Width="800">
+    <Grid>
+        <Button Content="GENERUJ" HorizontalAlignment="Left" Margin="343,219,0,0" VerticalAlignment="Top" Width="117" Click="GenerujAut"/>
+        <TextBox x:Name="IlośćLpTextBox" HorizontalAlignment="Left" Height="23" Margin="102,177,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ATextBox" HorizontalAlignment="Left" Height="23" Margin="260,177,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PTextBox" HorizontalAlignment="Left" Height="23" Margin="426,0,0,369" TextWrapping="Wrap" Text="0" VerticalAlignment="Bottom" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="102,156,0,0" TextWrapping="Wrap" Text="Ilość liczb pierwszych" VerticalAlignment="Top" Height="16" Width="136"/>
+        <TextBlock HorizontalAlignment="Left" Margin="260,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="100"><Run Text="Wpisz"/><Run Text=" numer"/><Run Text=" "/><Run Text="a"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="426,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="120"><Run Text="Wpisz "/><Run Text="numer "/><Run Text="p"/></TextBlock>
+        <TextBox x:Name="StanTextBox" HorizontalAlignment="Left" Height="23" Margin="460,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="460,234,0,0" TextWrapping="Wrap" Text="Stan pracy:" VerticalAlignment="Top" Height="16" Width="67"/>
+        <Button Content="GENERUJ LP" HorizontalAlignment="Left" Margin="105,219,0,0" VerticalAlignment="Top" Width="117" Click="GenerujLP"/>
+
+    </Grid>
+</Window>

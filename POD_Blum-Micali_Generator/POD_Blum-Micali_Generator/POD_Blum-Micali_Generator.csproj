@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\BMAut.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\BMGen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +75,9 @@
     <Compile Include="Model\SiG.cs" />
     <Compile Include="Model\X0G.cs" />
     <Compile Include="Model\XiG.cs" />
+    <Compile Include="View\BMAut.xaml.cs">
+      <DependentUpon>BMAut.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\BMGen.xaml.cs">
       <DependentUpon>BMGen.xaml</DependentUpon>
     </Compile>

@@ -65,35 +65,18 @@ namespace POD_Blum_Micali_Generator
 
         private void generuj_Click(object sender, RoutedEventArgs e)
         {
-            long x0=0 ;
-            long xn=0 ;
-            long tmp=0;
-            /*
-            x0 = bmg.genX0();
-            StreamWriter SW;
-
-            SW = File.AppendText("klucz.txt");
-            xn = bmg.genXi(x0);
-            SW.WriteLine(bmg.rS1());
-            SW.Close();
           
-
-            for (int i = 0; i < 10000; i++)
-            {
-                SW = File.AppendText("klucz.txt");
-                tmp = bmg.genXi(xn);
-                SW.WriteLine(bmg.rS1());
-                SW.Close();
-                xn = bmg.genXi(tmp);
-                i = i++;
-            }
-            klucz.Text = ("Koniec");
-              */
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var i = new BMGen();
+            i.Show();
+        }
+
+        private void Automatycznie(object sender, RoutedEventArgs e)
+        {
+            var i = new BMAut();
             i.Show();
         }
 

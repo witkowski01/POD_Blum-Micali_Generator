@@ -13,45 +13,47 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 using POD_Blum_Micali_Generator.Model;
 
 
 namespace POD_Blum_Micali_Generator.View
 {
     /// <summary>
-    /// Interaction logic for BMGen.xaml
+    /// Interaction logic for BMAut.xaml
     /// </summary>
-    public partial class BMGen : Window
+    public partial class BMAut : Window
     {
-        public BMGen()
+        public BMAut()
         {
             InitializeComponent();
+            
         }
+        private BMG bmg = new BMG();
+        private SiG si = new SiG();
 
-        private void Generuj(object sender, RoutedEventArgs e)
+        private void GenerujAut(object sender, RoutedEventArgs e)
         {
-            UInt64 a, p, x0, xi;
+            UInt64 a, p, xi;
+            Int64 x0;
             StreamWriter SW;
-            BMG bmg = new BMG();
-            SiG si = new SiG();
+
             UInt64 sn;
 
-         
-            a = Convert.ToUInt64(ATextBox.Text);
-            p = Convert.ToUInt64(PTextBox.Text);
-            x0 = Convert.ToUInt64(X0TextBox.Text);
+            UInt64 numerP, numerA;
+            StanTextBox.Text = "Pracuję";
+            numerP = (UInt64)Convert.ToInt32(PTextBox.Text);
+            numerA = (UInt64)Convert.ToInt32(ATextBox.Text);
 
-            // Nie wiem czemu ale to się nie wyświetla
-            StanTextBox.Text = "Pracuję sobie";
+            p = bmg.genP((int)numerP);
+            a = bmg.genA((int) numerA);
+            x0 = bmg.genX0(numerP);
 
-
-
-            sn=(ulong) si.Si(x0, p);
+            sn=(ulong) si.Si((UInt64)x0, p);
             SW = File.AppendText("klucz.txt");
             SW.WriteLine(sn.ToString());
             SW.Close();
 
-            //bmg.genX0(p);
             xi=  bmg.genXi(a, p, (Int64)x0);
             sn = (ulong) si.Si(xi, p);
 
@@ -70,6 +72,12 @@ namespace POD_Blum_Micali_Generator.View
             }
             StanTextBox.Text = "Koniec";
 
+        }
+
+        private void GenerujLP(object sender, RoutedEventArgs e)
+        {
+            bmg.genLP();
+            IlośćLpTextBox.Text= (bmg.retIloscLP()).ToString();
         }
     }
 }

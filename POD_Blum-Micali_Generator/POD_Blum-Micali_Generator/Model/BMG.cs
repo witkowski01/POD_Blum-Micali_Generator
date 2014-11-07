@@ -9,7 +9,7 @@ namespace POD_Blum_Micali_Generator.Model
 {
     class BMG
     {
-
+        private LPG ap = new LPG();
         public Int64 genX0( UInt64 p)
         {
             X0G x0=new X0G();
@@ -27,16 +27,24 @@ namespace POD_Blum_Micali_Generator.Model
 
         public UInt64 genA(int numer)
         {
-            var a = new LPG();
-            return a.retLP(numer);
+            return ap.retLP(numer);
         }
 
         public UInt64 genP(int numer)
         {
-            var p = new LPG();
-            return p.retLP(numer);
+            
+            return ap.retLP(numer);
         }
 
+        public void genLP()
+        {
+            ap.genLP(1000);
+        }
+
+        public int retIloscLP()
+        {
+            return ap.retIloscLP();
+        }
         
     }
 }

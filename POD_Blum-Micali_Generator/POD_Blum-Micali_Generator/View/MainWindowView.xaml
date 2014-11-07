@@ -8,6 +8,7 @@
         <Button x:Name="generuj" Content="Generuj" HorizontalAlignment="Left" Margin="288,105,0,0" VerticalAlignment="Top" Width="76" Click="generuj_Click"/>
         <TextBox x:Name="OknoTextBox" HorizontalAlignment="Left" Height="70" Margin="340,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" />
         <Button Content="ręczne wprowadzanie" HorizontalAlignment="Left" Margin="62,90,0,0" VerticalAlignment="Top" Width="149" Click="Button_Click"/>
+        <Button Content="Automatyczne" HorizontalAlignment="Left" Margin="62,133,0,0" VerticalAlignment="Top" Width="149" Click="Automatycznie"/>
 
     </Grid>
 </Window>
