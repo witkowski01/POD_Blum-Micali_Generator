@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 namespace POD_Blum_Micali_Generator.Model
 {
     //Generator liczby Xi
-    class XnG
+    class XiG
     {
-        private BigInteger xn = 0;
-        public BigInteger Xn(int a, BigInteger x_n, int p)
+        public Int64 XI(Int64 a, Int64 p, Int64 xi)
         {
-            xn=BigInteger.Pow(a, x_n);
-            return xn = ((BigInteger)(Math.Pow(a, x_n)) % p);
-            //return xn;
+            Int64 xn;
+            xn = (((Int64)(Math.Pow(a, xi))) % p);
+            return xn;
         }
     }
 }

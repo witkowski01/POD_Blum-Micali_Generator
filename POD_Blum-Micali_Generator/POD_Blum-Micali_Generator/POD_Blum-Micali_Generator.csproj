@@ -66,7 +66,7 @@
     <Compile Include="Model\LPG.cs" />
     <Compile Include="Model\SiG.cs" />
     <Compile Include="Model\X0G.cs" />
-    <Compile Include="Model\XnG.cs" />
+    <Compile Include="Model\XiG.cs" />
     <Compile Include="View\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>

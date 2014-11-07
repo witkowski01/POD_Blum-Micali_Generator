@@ -9,9 +9,9 @@ namespace POD_Blum_Micali_Generator.Model
     //Generator 0 1
     class SiG
     {
-        public int Sig(long xn, int p)
+        public int Si(Int64 xn, Int64 p)
         {
-            if (xn > ((p - 1)/2))
+            if (xn > ((p - 1) / 2))
             {
                 return 1;
             }

@@ -9,15 +9,19 @@ namespace POD_Blum_Micali_Generator.Model
     class LPG
     {
 
-        private int lp;
+        int ii = 0;
+        Int64[] tab2 = new long[1000];
+
+       
 
         //Funkcja zwracająca liczby pierwsze
-        public int LPgen(int max)
+        public void genLP (Int64 max)
         {
-            int n = 0;
+            Int64 n = 0;
 
           //  klucz.Text = "Podaj liczbe: ";
-            n = Convert.ToInt32(max);
+            n = max;
+            //n = Convert.ToInt32(max);
             bool[] tab = new bool[n+1];
             for (int i = 2; i * i <= n; i++)
             {
@@ -31,14 +35,28 @@ namespace POD_Blum_Micali_Generator.Model
                 }
             }
            // Console.WriteLine("Liczby pierwsze z zakresu [0," + n + "]: ");
+
             for (int i = 2; i <= n; i++)
             {
                 if (tab[i] == false)
                 {
-                    lp=i;
+                    tab2[ii] = i;
+                    ii++;
                 }
             }
-            return lp;
+      
+        }
+
+
+        int retIloscLP()
+        {
+            return ii;
+        }
+        Int64 retLP(int numer)
+        {
+            return tab2[numer];
         }
     }
+
+
 }

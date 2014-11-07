@@ -9,40 +9,18 @@ namespace POD_Blum_Micali_Generator.Model
 {
     class BMG
     {
-        private int a = 0, p = 0, x0 = 0,  s1 = 0;
-        private long xn = 0;
-        LPG Lp = new LPG();
-        X0G Xo=new X0G();
-        XnG Xn=new XnG();
-        SiG Si=new SiG();
 
-        public int genX0()
+        public Int64 genX0( UInt64 p)
         {
-            return x0;
+            X0G x0=new X0G();
+            return x0.X0(p);
         }
 
-        public void genBMG()
-        {
-            p = Lp.LPgen(4000);
-            a = Lp.LPgen(1350);
-            x0 = Xo.X0(p);
-            
-        }
-
-        public BMG()
-        {
-            genBMG();
-
-        }
 
         public long genBM(long x_n)
         {
             
-            xn = Xn.Xn(a, x_n, p);
 
-            s1 = Si.Sig(xn, p);
-
-            return xn;
         }
 
         public int rS1()

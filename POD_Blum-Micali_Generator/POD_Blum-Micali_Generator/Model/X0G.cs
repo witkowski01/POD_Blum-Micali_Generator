@@ -12,9 +12,11 @@ namespace POD_Blum_Micali_Generator.Model
         public Random rnd = new Random();
        
 
-        public int X0(int p)
+        public Int64 X0(UInt64 p)
         {
-           return (rnd.Next(0, (p-1)));
+            int minValue = 0;
+            UInt64 maxValue = p - 1;
+            return (rnd.Next(minValue, (int) maxValue));
         }
     }
 }
