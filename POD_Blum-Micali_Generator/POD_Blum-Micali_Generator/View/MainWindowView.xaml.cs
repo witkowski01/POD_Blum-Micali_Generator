@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using POD_Blum_Micali_Generator.Model;
+using POD_Blum_Micali_Generator.View;
 
 namespace POD_Blum_Micali_Generator
 {
@@ -67,11 +68,12 @@ namespace POD_Blum_Micali_Generator
             long x0=0 ;
             long xn=0 ;
             long tmp=0;
+            /*
             x0 = bmg.genX0();
             StreamWriter SW;
 
             SW = File.AppendText("klucz.txt");
-            xn = bmg.genBM(x0);
+            xn = bmg.genXi(x0);
             SW.WriteLine(bmg.rS1());
             SW.Close();
           
@@ -79,13 +81,20 @@ namespace POD_Blum_Micali_Generator
             for (int i = 0; i < 10000; i++)
             {
                 SW = File.AppendText("klucz.txt");
-                tmp = bmg.genBM(xn);
+                tmp = bmg.genXi(xn);
                 SW.WriteLine(bmg.rS1());
                 SW.Close();
-                xn = bmg.genBM(tmp);
+                xn = bmg.genXi(tmp);
                 i = i++;
             }
             klucz.Text = ("Koniec");
+              */
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var i = new BMGen();
+            i.Show();
         }
 
 

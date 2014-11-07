@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\BMGen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +71,9 @@
     <Compile Include="Model\SiG.cs" />
     <Compile Include="Model\X0G.cs" />
     <Compile Include="Model\XiG.cs" />
+    <Compile Include="View\BMGen.xaml.cs">
+      <DependentUpon>BMGen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>

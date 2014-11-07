@@ -17,15 +17,26 @@ namespace POD_Blum_Micali_Generator.Model
         }
 
 
-        public long genBM(long x_n)
+        public UInt64 genXi(UInt64 a, UInt64 p, Int64 x_n)
         {
-            
-
+            UInt64 xi;
+            var XI=new XiG();
+            xi = XI.Xi((Int64)a, (Int64)p, (UInt64)x_n);
+            return xi;
         }
 
-        public int rS1()
+        public UInt64 genA(int numer)
         {
-            return s1;
+            var a = new LPG();
+            return a.retLP(numer);
         }
+
+        public UInt64 genP(int numer)
+        {
+            var p = new LPG();
+            return p.retLP(numer);
+        }
+
+        
     }
 }
