@@ -3,16 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="BMAut" Height="600" Width="800">
     <Grid>
-        <Button Content="GENERUJ" HorizontalAlignment="Left" Margin="343,219,0,0" VerticalAlignment="Top" Width="117" Click="GenerujAut"/>
-        <TextBox x:Name="IlośćLpTextBox" HorizontalAlignment="Left" Height="23" Margin="102,177,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ATextBox" HorizontalAlignment="Left" Height="23" Margin="260,177,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="PTextBox" HorizontalAlignment="Left" Height="23" Margin="426,0,0,369" TextWrapping="Wrap" Text="0" VerticalAlignment="Bottom" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="102,156,0,0" TextWrapping="Wrap" Text="Ilość liczb pierwszych" VerticalAlignment="Top" Height="16" Width="136"/>
-        <TextBlock HorizontalAlignment="Left" Margin="260,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="100"><Run Text="Wpisz"/><Run Text=" numer"/><Run Text=" "/><Run Text="a"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="426,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="120"><Run Text="Wpisz "/><Run Text="numer "/><Run Text="p"/></TextBlock>
-        <TextBox x:Name="StanTextBox" HorizontalAlignment="Left" Height="23" Margin="460,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Image Source="/POD_Blum-Micali_Generator;component/w3.jpg" Stretch="Fill"/>
+        <Button Content="GENERUJ" HorizontalAlignment="Left" Margin="71,438,0,0" VerticalAlignment="Top" Width="151" Click="GenerujAut" Background="#FF22CF88" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Height="47"/>
+        <TextBox x:Name="IlośćLpTextBox" HorizontalAlignment="Left" Height="23" Margin="155,164,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ATextBox" HorizontalAlignment="Left" Height="23" Margin="25,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PTextBox" HorizontalAlignment="Left" Height="23" Margin="25,0,0,188" TextWrapping="Wrap" Text="0" VerticalAlignment="Bottom" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="25,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="222" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Ilość liczb pierwszych"/><Run Text=" jakie wygenerowano"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="25,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="136" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Wpisz"/><Run Text=" numer"/><Run Text=" "/><Run Text="a"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="25,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="154" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Wpisz "/><Run Text="numer "/><Run Text="p"/></TextBlock>
+        <TextBox x:Name="StanTextBox" HorizontalAlignment="Left" Height="23" Margin="391,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Pracuję"/>
         <TextBlock HorizontalAlignment="Left" Margin="460,234,0,0" TextWrapping="Wrap" Text="Stan pracy:" VerticalAlignment="Top" Height="16" Width="67"/>
-        <Button Content="GENERUJ LP" HorizontalAlignment="Left" Margin="105,219,0,0" VerticalAlignment="Top" Width="117" Click="GenerujLP"/>
+        <Button Content="GENERUJ LP" HorizontalAlignment="Left" Margin="25,86,0,0" VerticalAlignment="Top" Width="117" Click="GenerujLP" Background="#FF22CF88" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Height="47"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="332" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Blum-Micali_"/><Run FontSize="24" Text="Generator"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="391,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="136" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2" Text="Stan:"/>
+        <Button x:Name="Zamknij" Margin="0,516,10,19" HorizontalAlignment="Right" Width="108" Click="Close" RenderTransformOrigin="0.393,-3.722" Background="#FF22CF88" FontSize="16" FontWeight="Bold" Content="Zamknij" FontFamily="Times New Roman"/>
+        <Button x:Name="Minimalizuj" Margin="0,472,10,57" HorizontalAlignment="Right" Width="108" Click="Minimalize" Content="Minimalizuj" RenderTransformOrigin="0.702,1.308" Background="#FF22CF88" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman"/>
 
     </Grid>
 </Window>

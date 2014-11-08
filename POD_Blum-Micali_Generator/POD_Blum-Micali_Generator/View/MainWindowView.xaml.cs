@@ -80,6 +80,16 @@ namespace POD_Blum_Micali_Generator
             i.Show();
         }
 
+        private void Minimalize(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
 
     }
 }
