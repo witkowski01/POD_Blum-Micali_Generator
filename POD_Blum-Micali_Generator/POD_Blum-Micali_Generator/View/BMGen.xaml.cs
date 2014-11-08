@@ -74,9 +74,12 @@ namespace POD_Blum_Micali_Generator.View
                 SW.Write(sn.ToString());
                 SW.Close();
             }
+            /*
             SW01 = File.AppendText("klucz2.txt");
             SW01.WriteLine(tab01.GetValue(20000));
-            SW01.Close();        
+            SW01.Close();  
+             */
+            
             StanTextBox.Text = "Koniec";
 
         }

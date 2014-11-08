@@ -28,6 +28,7 @@ namespace POD_Blum_Micali_Generator
 
         public void genLP()
         {
+            /*
             int n;
             OknoTextBox.Text = "Podaj liczbe: ";
             n = Convert.ToInt32(396);
@@ -55,6 +56,7 @@ namespace POD_Blum_Micali_Generator
             }
             OknoTextBox.Text = "Liczby pierwsze z zakresu [0," + n + "]: " + iloscLP + "   ";
             
+             */
         }
   
         public MainWindow()
@@ -63,9 +65,9 @@ namespace POD_Blum_Micali_Generator
             
         }
 
-        private void generuj_Click(object sender, RoutedEventArgs e)
+        private void generuj_Click(object sender, RoutedEventArgs e)  // Zapisz do pliku
         {
-          
+            var save = new Zapisz(klucz.Text);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -88,6 +90,25 @@ namespace POD_Blum_Micali_Generator
         private void Close(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+
+        private void WczytajButton(object sender, RoutedEventArgs e)  // Wczytaj z pliku   
+        {
+            var wczyt = new Wczytaj();
+            klucz.Text = wczyt.odczyt_zawartosci();
+        }
+
+        private void PodgladKlucza(object sender, RoutedEventArgs e)
+        {
+            Wczytaj wczyt=new Wczytaj();
+            klucz.Text = wczyt.odczyt_zawartosci("klucz.txt");
+        }
+
+        private void Autor(object sender, RoutedEventArgs e)
+        {
+            var i = new Autor();
+            i.Show();
         }
 
 
