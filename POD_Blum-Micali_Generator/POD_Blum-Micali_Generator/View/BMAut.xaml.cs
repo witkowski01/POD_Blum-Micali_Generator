@@ -42,8 +42,8 @@ namespace POD_Blum_Micali_Generator.View
          
             UInt64 sn;
 
-            SW01 = File.AppendText("klucz2.txt");
-            SW01.Close();
+            //SW01 = File.AppendText("klucz2.txt");
+            //SW01.Close();
 
             UInt64 numerP, numerA;
             StanTextBox.Text = "Pracuję";
