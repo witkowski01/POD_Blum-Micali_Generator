@@ -31,11 +31,12 @@ namespace POD_Blum_Micali_Generator.View
         private void Generuj(object sender, RoutedEventArgs e)
         {
             UInt64 a, p, x0, xi;
-            StreamWriter SW;
+            StreamWriter SW,SW01;
             BMG bmg = new BMG();
             SiG si = new SiG();
             UInt64 sn;
-
+            UInt64[] tab01 = new UInt64[20005];
+            var i01 = 0;
          
             a = Convert.ToUInt64(ATextBox.Text);
             p = Convert.ToUInt64(PTextBox.Text);
@@ -48,7 +49,9 @@ namespace POD_Blum_Micali_Generator.View
 
             sn=(ulong) si.Si(x0, p);
             SW = File.AppendText("klucz.txt");
-            SW.WriteLine(sn.ToString());
+            SW.Write(sn.ToString());
+            tab01[i01] = sn;
+            i01++;
             SW.Close();
 
             //bmg.genX0(p);
@@ -56,18 +59,24 @@ namespace POD_Blum_Micali_Generator.View
             sn = (ulong) si.Si(xi, p);
 
             SW = File.AppendText("klucz.txt");
-            SW.WriteLine(sn.ToString());
+            SW.Write(sn.ToString());
+            tab01[i01] = sn;
+            i01++;
             SW.Close();
 
             for (int i = 0; i < 20000; i++)
             {
                 xi = bmg.genXi(a, p, (Int64)xi);
                 sn = (ulong) si.Si(xi, p);
-
+                tab01[i01] = sn;
+                i01++;
                 SW = File.AppendText("klucz.txt");
-                SW.WriteLine(sn.ToString());
+                SW.Write(sn.ToString());
                 SW.Close();
             }
+            SW01 = File.AppendText("klucz2.txt");
+            SW01.WriteLine(tab01.GetValue(20000));
+            SW01.Close();        
             StanTextBox.Text = "Koniec";
 
         }

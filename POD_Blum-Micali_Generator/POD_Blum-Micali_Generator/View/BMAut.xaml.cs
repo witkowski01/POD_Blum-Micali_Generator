@@ -36,9 +36,14 @@ namespace POD_Blum_Micali_Generator.View
         {
             UInt64 a, p, xi;
             Int64 x0;
-            StreamWriter SW;
-
+            StreamWriter SW,SW01;
+            UInt64[] tab01 = new UInt64[20005];
+            var i01 = 0;
+         
             UInt64 sn;
+
+            SW01 = File.AppendText("klucz2.txt");
+            SW01.Close();
 
             UInt64 numerP, numerA;
             StanTextBox.Text = "Pracuję";
@@ -51,25 +56,30 @@ namespace POD_Blum_Micali_Generator.View
 
             sn=(ulong) si.Si((UInt64)x0, p);
             SW = File.AppendText("klucz.txt");
-            SW.WriteLine(sn.ToString());
+            SW.Write(sn.ToString());
+            tab01[i01] = sn;
+            i01++;
             SW.Close();
 
             xi=  bmg.genXi(a, p, (Int64)x0);
             sn = (ulong) si.Si(xi, p);
-
+            tab01[i01] = sn;
+            i01++;
             SW = File.AppendText("klucz.txt");
-            SW.WriteLine(sn.ToString());
+            SW.Write(sn.ToString());
             SW.Close();
 
             for (int i = 0; i < 20000; i++)
             {
                 xi = bmg.genXi(a, p, (Int64)xi);
                 sn = (ulong) si.Si(xi, p);
-
+                tab01[i01] = sn;
+                i01++;
                 SW = File.AppendText("klucz.txt");
-                SW.WriteLine(sn.ToString());
+                SW.Write(sn.ToString());
                 SW.Close();
             }
+           // GenerujHex(tab01,SW01);
             StanTextBox.Text = "Koniec";
 
         }
@@ -78,6 +88,22 @@ namespace POD_Blum_Micali_Generator.View
         {
             bmg.genLP();
             IlośćLpTextBox.Text= (bmg.retIloscLP()).ToString();
+        }
+
+        private void GenerujHex(UInt64[] tab, StreamWriter SW01)
+        {
+            int j = 0;
+            UInt64[][] tab1 = new UInt64[5001][];
+            for (int i = 0; i < 5000; i++)
+            {
+                for (int k = 0; k < 4; k++)
+                {
+                    tab1[i][k] = tab[i + k];
+                }
+                SW01 = File.AppendText("klucz2.txt");
+                SW01.WriteLine(tab1[i][1].ToString());
+                SW01.Close();
+            }
         }
     }
 }
