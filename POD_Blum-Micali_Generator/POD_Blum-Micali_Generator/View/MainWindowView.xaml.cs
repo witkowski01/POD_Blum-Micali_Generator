@@ -24,7 +24,7 @@ namespace POD_Blum_Micali_Generator
     public partial class MainWindow : Window
     {
       BMG bmg=new BMG();
-
+        private string kluczString;
 
         public void genLP()
         {
@@ -67,7 +67,9 @@ namespace POD_Blum_Micali_Generator
 
         private void generuj_Click(object sender, RoutedEventArgs e)  // Zapisz do pliku
         {
-            var save = new Zapisz(klucz.Text);
+            Wczytaj wczyt = new Wczytaj();
+            kluczString = wczyt.odczyt_zawartosci("klucz");
+            var save = new Zapisz(kluczString);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -102,6 +104,7 @@ namespace POD_Blum_Micali_Generator
         private void PodgladKlucza(object sender, RoutedEventArgs e)
         {
             Wczytaj wczyt=new Wczytaj();
+            kluczString = wczyt.odczyt_zawartosci("klucz.txt");
             klucz.Text = wczyt.odczyt_zawartosci("klucz.txt");
         }
 

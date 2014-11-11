@@ -55,7 +55,7 @@ namespace POD_Blum_Micali_Generator.View
             x0 = bmg.genX0(numerP);
 
             sn=(ulong) si.Si((UInt64)x0, p);
-            SW = File.AppendText("klucz.txt");
+            SW = File.AppendText("klucz");
             SW.Write(sn.ToString());
             tab01[i01] = sn;
             i01++;
@@ -65,7 +65,7 @@ namespace POD_Blum_Micali_Generator.View
             sn = (ulong) si.Si(xi, p);
             tab01[i01] = sn;
             i01++;
-            SW = File.AppendText("klucz.txt");
+            SW = File.AppendText("klucz");
             SW.Write(sn.ToString());
             SW.Close();
 
@@ -75,7 +75,7 @@ namespace POD_Blum_Micali_Generator.View
                 sn = (ulong) si.Si(xi, p);
                 tab01[i01] = sn;
                 i01++;
-                SW = File.AppendText("klucz.txt");
+                SW = File.AppendText("klucz");
                 SW.Write(sn.ToString());
                 SW.Close();
             }
