@@ -17,7 +17,7 @@ namespace POD_Blum_Micali_Generator.Model
             BigInteger xn;
             xn = (BigInteger.ModPow(a, xi, p));
             //xn = (((Int64)(Math.Pow(a, xi))) % p);
-            return (UInt64)xn;
+            return xn;
         }
     }
 }

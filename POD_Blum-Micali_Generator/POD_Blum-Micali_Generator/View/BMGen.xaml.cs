@@ -38,10 +38,12 @@ namespace POD_Blum_Micali_Generator.View
             UInt64 sn;
             BigInteger[] tab01 = new BigInteger[20005];
             var i01 = 0;
-         
-            a = Convert.ToUInt64(ATextBox.Text);
-            p = Convert.ToUInt64(PTextBox.Text);
-            x0 = Convert.ToUInt64(X0TextBox.Text);
+
+            //BigInteger bi = new BigInteger(Encoding.UTF8.GetBytes(ATextBox.Text));
+
+            a = new BigInteger(Encoding.UTF8.GetBytes(ATextBox.Text));
+            p = new BigInteger(Encoding.UTF8.GetBytes(PTextBox.Text));
+            x0 = new BigInteger(Encoding.UTF8.GetBytes(X0TextBox.Text)); 
 
             // Nie wiem czemu ale to się nie wyświetla
             StanTextBox.Text = "Pracuję sobie";
@@ -67,7 +69,7 @@ namespace POD_Blum_Micali_Generator.View
 
             for (int i = 0; i < 20000; i++)
             {
-                xi = bmg.genXi(a, p, (Int64)xi);
+                xi = bmg.genXi(a, p, xi);
                 sn = (ulong) si.Si(xi, p);
                 tab01[i01] = sn;
                 i01++;

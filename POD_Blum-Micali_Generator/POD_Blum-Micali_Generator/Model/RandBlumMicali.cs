@@ -31,10 +31,10 @@ namespace POD_Blum_Micali_Generator
         /// <param name="primitiveRoot">root to use as a generator of the cyclic group</param>
         public RandBlumMicali(BigInteger seed, BigInteger safePrime, BigInteger primitiveRoot)
         {
-            _seed = seed;
-            _safePrime = safePrime;
-            _primitiveRoot = primitiveRoot;
-            _intermed = BigInteger.ModPow(_primitiveRoot, _seed, _safePrime);
+            _seed = seed; // nasze x0
+            _safePrime = safePrime;  // nasze p
+            _primitiveRoot = primitiveRoot;  // nasze a nieszczęsne
+            _intermed = BigInteger.ModPow(_primitiveRoot, _seed, _safePrime);   // tu  obliczamy x1 
             
         }
 
@@ -44,7 +44,7 @@ namespace POD_Blum_Micali_Generator
         /// <returns>random 0 or 1</returns>
         public byte GetNextRandomBit()
         {
-            _intermed = BigInteger.ModPow(_primitiveRoot, _intermed, _safePrime);
+            _intermed = BigInteger.ModPow(_primitiveRoot, _intermed, _safePrime); // tu obliczamy xn już
             if (_intermed < ((_safePrime - 1) / 2)) return 1;
             return 0;
         }
