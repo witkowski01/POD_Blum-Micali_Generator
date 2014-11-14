@@ -76,6 +76,8 @@
     </Compile>
     <Compile Include="Model\BMG.cs" />
     <Compile Include="Model\LPG.cs" />
+    <Compile Include="Model\PrimitiveRoots.cs" />
+    <Compile Include="Model\RandBlumMicali.cs" />
     <Compile Include="Model\SiG.cs" />
     <Compile Include="Model\Wczytaj.cs" />
     <Compile Include="Model\X0G.cs" />

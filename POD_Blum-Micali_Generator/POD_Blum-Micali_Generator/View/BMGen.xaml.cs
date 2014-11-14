@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,12 +31,12 @@ namespace POD_Blum_Micali_Generator.View
 
         private void Generuj(object sender, RoutedEventArgs e)
         {
-            UInt64 a, p, x0, xi;
+            BigInteger a, p, x0, xi;
             StreamWriter SW,SW01;
             BMG bmg = new BMG();
             SiG si = new SiG();
             UInt64 sn;
-            UInt64[] tab01 = new UInt64[20005];
+            BigInteger[] tab01 = new BigInteger[20005];
             var i01 = 0;
          
             a = Convert.ToUInt64(ATextBox.Text);
@@ -55,7 +56,7 @@ namespace POD_Blum_Micali_Generator.View
             SW.Close();
 
             //bmg.genX0(p);
-            xi=  bmg.genXi(a, p, (Int64)x0);
+            xi=  bmg.genXi(a, p, x0);
             sn = (ulong) si.Si(xi, p);
 
             SW = File.AppendText("klucz");

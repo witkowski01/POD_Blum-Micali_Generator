@@ -11,10 +11,12 @@ namespace POD_Blum_Micali_Generator.Model
     //Generator liczby Xi
     class XiG
     {
-        public UInt64 Xi(Int64 a, Int64 p, UInt64 xi)
+        public BigInteger Xi(BigInteger a, BigInteger p, BigInteger xi)
         {
-            Int64 xn;
-            xn = (((Int64)(Math.Pow(a, xi))) % p);
+
+            BigInteger xn;
+            xn = (BigInteger.ModPow(a, xi, p));
+            //xn = (((Int64)(Math.Pow(a, xi))) % p);
             return (UInt64)xn;
         }
     }

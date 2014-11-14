@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -17,20 +18,20 @@ namespace POD_Blum_Micali_Generator.Model
         }
 
 
-        public UInt64 genXi(UInt64 a, UInt64 p, Int64 x_n)
+        public BigInteger genXi(BigInteger a, BigInteger p, BigInteger x_n)
         {
-            UInt64 xi;
+            BigInteger xi;
             var XI=new XiG();
-            xi = XI.Xi((Int64)a, (Int64)p, (UInt64)x_n);
+            xi = XI.Xi(a, p, x_n);
             return xi;
         }
 
-        public UInt64 genA(int numer)
+        public BigInteger genA(BigInteger numer)
         {
             return ap.retLP(numer);
         }
 
-        public UInt64 genP(int numer)
+        public BigInteger genP(BigInteger numer)
         {
             
             return ap.retLP(numer);

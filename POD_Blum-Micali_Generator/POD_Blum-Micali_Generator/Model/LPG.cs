@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,7 @@ namespace POD_Blum_Micali_Generator.Model
     {
 
        private int ii = 0;
-       private UInt64[] tab2 = new UInt64[1000];
+       private BigInteger[] tab2 = new BigInteger[1000];
 
        
 
@@ -52,9 +53,9 @@ namespace POD_Blum_Micali_Generator.Model
         {
             return ii;
         }
-       public UInt64 retLP(int numer)
+       public BigInteger retLP(BigInteger numer)
         {
-            return tab2[numer];
+            return tab2[(UInt64)numer];
         }
     }
 

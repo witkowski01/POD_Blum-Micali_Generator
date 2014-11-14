@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -34,10 +35,10 @@ namespace POD_Blum_Micali_Generator.View
 
         private void GenerujAut(object sender, RoutedEventArgs e)
         {
-            UInt64 a, p, xi;
+            BigInteger a, p, xi;
             Int64 x0;
             StreamWriter SW,SW01;
-            UInt64[] tab01 = new UInt64[20005];
+            BigInteger[] tab01 = new BigInteger[20005];
             var i01 = 0;
          
             UInt64 sn;
@@ -50,8 +51,8 @@ namespace POD_Blum_Micali_Generator.View
             numerP = (UInt64)Convert.ToInt32(PTextBox.Text);
             numerA = (UInt64)Convert.ToInt32(ATextBox.Text);
 
-            p = bmg.genP((int)numerP);
-            a = bmg.genA((int) numerA);
+            p = bmg.genP(numerP);
+            a = bmg.genA(numerA);
             x0 = bmg.genX0(numerP);
 
             sn=(ulong) si.Si((UInt64)x0, p);
