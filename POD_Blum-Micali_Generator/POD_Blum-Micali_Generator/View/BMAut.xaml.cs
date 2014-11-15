@@ -56,7 +56,8 @@ namespace POD_Blum_Micali_Generator.View
             x0 = bmg.genX0(numerP);
 
             sn=(ulong) si.Si((UInt64)x0, p);
-            SW = File.AppendText("klucz");
+            SW = File.CreateText("klucz");
+           // SW = File.AppendText("klucz");
             SW.Write(sn.ToString());
             tab01[i01] = sn;
             i01++;

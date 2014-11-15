@@ -51,7 +51,8 @@ namespace POD_Blum_Micali_Generator.View
 
 
             sn=(ulong) si.Si(x0, p);
-            SW = File.AppendText("klucz");
+            SW = File.CreateText("klucz");  // Chcemy tworzyć przy każdym obiegu inny plik/nadpisywać poprzedni
+            //SW = File.AppendText("klucz");
             SW.Write(sn.ToString());
             tab01[i01] = sn;
             i01++;
