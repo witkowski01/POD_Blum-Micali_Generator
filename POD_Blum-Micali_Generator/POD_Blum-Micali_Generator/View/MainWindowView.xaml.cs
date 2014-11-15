@@ -143,6 +143,7 @@ namespace POD_Blum_Micali_Generator
             i.Show();
         }
 
+        /* Teraz zbędne i wyłączone, ale jeśli kiedyś miało by sie przydać to proszę bardzo można odblokować
         private void btnGenerate_Click(object sender, RoutedEventArgs e)
         {
             //a few 20 digit safe primes to play with:
@@ -171,11 +172,13 @@ namespace POD_Blum_Micali_Generator
 
 
             //request a few bytes
+            var btss = blummicali.GetNextRandomBit().ToString();
             var bts = blummicali.GetRandomBytes(20000).ToList();
             //show the bytes generated
+           // klucz.Text = btss;
             klucz.Text = string.Join(",", bts.Select(s => s.ToString()).ToArray());
         }
 
-
+        */
     }
 }

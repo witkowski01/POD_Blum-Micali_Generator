@@ -3,17 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="BMAut" Height="600" Width="800">
     <Grid>
+        <Button Content="GENERUJ LP" HorizontalAlignment="Left" Margin="25,86,0,0" VerticalAlignment="Top" Width="117" Background="#FF22CF88" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Height="47"/>
+        <TextBlock HorizontalAlignment="Left" Margin="25,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="222" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Ilość liczb pierwszych"/><Run Text=" jakie wygenerowano"/></TextBlock>
+        <TextBox x:Name="IlośćLpTextBox" HorizontalAlignment="Left" Height="23" Margin="155,164,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+
+
+        <TextBox x:Name="ATextBox" HorizontalAlignment="Left" Height="23" Margin="25,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <Image Source="/POD_Blum-Micali_Generator;component/w3.jpg" Stretch="Fill"/>
         <Button Content="GENERUJ" HorizontalAlignment="Left" Margin="71,438,0,0" VerticalAlignment="Top" Width="151" Click="GenerujAut" Background="#FF22CF88" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Height="47"/>
-        <TextBox x:Name="IlośćLpTextBox" HorizontalAlignment="Left" Height="23" Margin="155,164,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ATextBox" HorizontalAlignment="Left" Height="23" Margin="25,283,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="PTextBox" HorizontalAlignment="Left" Height="23" Margin="25,0,0,188" TextWrapping="Wrap" Text="0" VerticalAlignment="Bottom" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="25,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="222" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Ilość liczb pierwszych"/><Run Text=" jakie wygenerowano"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="25,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="136" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Wpisz"/><Run Text=" numer"/><Run Text=" "/><Run Text="a"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="25,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="154" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Wpisz "/><Run Text="numer "/><Run Text="p"/></TextBlock>
+
+
+        <TextBox x:Name="PTextBox" HorizontalAlignment="Left" Height="23" Margin="85,0,0,308" TextWrapping="Wrap" Text="0" VerticalAlignment="Bottom" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="18,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="46" Width="257" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Wpisz "/><Run Text="numer "/><Run Text="p które dodam do generatora:"/></TextBlock>
         <TextBox x:Name="StanTextBox" HorizontalAlignment="Left" Height="23" Margin="521,516,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Pracuję"/>
-        <TextBlock HorizontalAlignment="Left" Margin="460,234,0,0" TextWrapping="Wrap" Text="Stan pracy:" VerticalAlignment="Top" Height="16" Width="67"/>
-        <Button Content="GENERUJ LP" HorizontalAlignment="Left" Margin="25,86,0,0" VerticalAlignment="Top" Width="117" Click="GenerujLP" Background="#FF22CF88" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman" Height="47"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="332" FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="#FF42E8C2"><Run Text="Blum-Micali_"/><Run FontSize="24" Text="Generator"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="521,488,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="136" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2" Text="Stan:"/>
         <Button x:Name="Zamknij" Margin="0,516,10,19" HorizontalAlignment="Right" Width="108" Click="Close" RenderTransformOrigin="0.393,-3.722" Background="#FF22CF88" FontSize="16" FontWeight="Bold" Content="Zamknij" FontFamily="Times New Roman"/>
@@ -24,6 +26,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="336,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="48" Foreground="#FF42E8C2" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" RenderTransformOrigin="2.129,0.826"><Run Text="x0"/><LineBreak/><Run/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="336,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="48" Foreground="#FF42E8C2" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" RenderTransformOrigin="2.129,0.826" Text="p"/>
         <TextBlock HorizontalAlignment="Left" Margin="336,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="48" Foreground="#FF42E8C2" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" RenderTransformOrigin="2.129,0.826"><Run Text="a"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="klucz" HorizontalAlignment="Left" Height="209" Margin="362,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" />
 
     </Grid>
 </Window>

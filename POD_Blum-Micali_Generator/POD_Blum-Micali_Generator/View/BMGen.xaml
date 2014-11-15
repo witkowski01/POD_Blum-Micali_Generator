@@ -17,6 +17,13 @@
         <TextBlock HorizontalAlignment="Left" Margin="505,495,0,0" TextWrapping="Wrap" Text="Stan :" VerticalAlignment="Top" Height="44" Width="81" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" Foreground="#FF42E8C2"/>
         <Button x:Name="Zamknij" Margin="0,516,10,19" HorizontalAlignment="Right" Width="108" Click="Close" RenderTransformOrigin="0.393,-3.722" Background="#FF22CF88" FontSize="16" FontWeight="Bold" Content="Zamknij" FontFamily="Times New Roman"/>
         <Button x:Name="Minimalizuj" Margin="0,472,10,57" HorizontalAlignment="Right" Width="108" Click="Minimalize" Content="Minimalizuj" RenderTransformOrigin="0.702,1.308" Background="#FF22CF88" FontSize="16" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <TextBox x:Name="klucz" HorizontalAlignment="Left" Height="209" Margin="424,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" />
+        <TextBox x:Name="t1" HorizontalAlignment="Left" Height="23" Margin="457,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
+        <TextBox x:Name="t2" HorizontalAlignment="Left" Height="23" Margin="457,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
+        <TextBox x:Name="t3" HorizontalAlignment="Left" Height="23" Margin="457,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
+        <TextBlock HorizontalAlignment="Left" Margin="420,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="68" Foreground="#FF42E8C2" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" RenderTransformOrigin="2.129,0.826"><Run Text="x0"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="420,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="68" Foreground="#FF42E8C2" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" RenderTransformOrigin="2.129,0.826" Text="p"/>
+        <TextBlock HorizontalAlignment="Left" Margin="420,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="68" Foreground="#FF42E8C2" FontFamily="Times New Roman" FontSize="18" FontWeight="Bold" RenderTransformOrigin="2.129,0.826"><Run Text="a"/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>
