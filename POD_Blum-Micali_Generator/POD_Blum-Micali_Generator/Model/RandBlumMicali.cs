@@ -1,12 +1,6 @@
-﻿///<Author>David Joseph Conner, 9-22-2014</Author>
-///<Modifier> Konrad Witkowski 14-11-2014</Modifier>
-///<Comment>
-///This code is provided to you as-is.  The
-///only thing that I ask is that you place my
-///name as the original author of this code
-///in the header of the class file containing 
-///the code.
-///</Comment>
+﻿///<Author> Konrad Witkowski 14-11-2014</Author>
+
+
 
 using System;
 using System.Collections.Generic;
