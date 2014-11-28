@@ -124,12 +124,6 @@ namespace POD_Blum_Micali_Generator
         }
 
 
-        private void WczytajButton(object sender, RoutedEventArgs e)  // Wczytaj z pliku   
-        {
-            var wczyt = new Wczytaj();
-            klucz.Text = wczyt.odczyt_zawartosci();
-        }
-
         private void PodgladKlucza(object sender, RoutedEventArgs e)
         {
             Wczytaj wczyt=new Wczytaj();
@@ -144,6 +138,15 @@ namespace POD_Blum_Micali_Generator
         }
 
         /* Teraz zbędne i wyłączone, ale jeśli kiedyś miało by sie przydać to proszę bardzo można odblokować
+          
+                 private void WczytajButton(object sender, RoutedEventArgs e)  // Wczytaj z pliku   
+        {
+            var wczyt = new Wczytaj();
+            klucz.Text = wczyt.odczyt_zawartosci();
+        }
+          
+          
+          
         private void btnGenerate_Click(object sender, RoutedEventArgs e)
         {
             //a few 20 digit safe primes to play with:

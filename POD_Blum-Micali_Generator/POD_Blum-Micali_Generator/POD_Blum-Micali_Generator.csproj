@@ -82,6 +82,7 @@
     <Compile Include="Model\Wczytaj.cs" />
     <Compile Include="Model\X0G.cs" />
     <Compile Include="Model\XiG.cs" />
+    <Compile Include="Model\XOR.cs" />
     <Compile Include="Model\Zapisz.cs" />
     <Compile Include="View\Autor.xaml.cs">
       <DependentUpon>Autor.xaml</DependentUpon>

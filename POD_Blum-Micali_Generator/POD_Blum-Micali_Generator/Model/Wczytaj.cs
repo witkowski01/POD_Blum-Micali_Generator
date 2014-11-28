@@ -46,7 +46,6 @@ namespace POD_Blum_Micali_Generator.Model
             }
         }
 
-
         public string odczyt_zawartosci(string nazwa)
         {
             var dlg = new Microsoft.Win32.OpenFileDialog { DefaultExt = ".txt", Filter = "Text documents (.txt)|*.txt" };
