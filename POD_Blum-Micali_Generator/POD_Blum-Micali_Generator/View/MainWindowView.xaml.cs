@@ -139,7 +139,9 @@ namespace POD_Blum_Micali_Generator
 
         private void Szyfrowanie(object sender, RoutedEventArgs e)
         {
-            var i = new Szyfrowanie();
+            var i = new szyfrator();
+            var j = new Szyfrowanie();
+           // j.Show();
             i.Show();
         }
 

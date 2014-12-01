@@ -54,6 +54,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\szyfrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Szyfrowanie.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,6 +92,9 @@
     <Compile Include="Model\XiG.cs" />
     <Compile Include="Model\XOR.cs" />
     <Compile Include="Model\Zapisz.cs" />
+    <Compile Include="View\szyfrator.xaml.cs">
+      <DependentUpon>szyfrator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Szyfrowanie.xaml.cs">
       <DependentUpon>Szyfrowanie.xaml</DependentUpon>
     </Compile>

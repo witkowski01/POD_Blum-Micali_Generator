@@ -33,13 +33,13 @@ namespace POD_Blum_Micali_Generator.View
         private string filename1;
         private byte[] plik_byte;
         //  private  string klucz_strig;
-
+        bool[] wynik;
         private char pli = new char();
         private Int32 plikint;
 
 
 
-        private byte[] plik, klucz;
+        private byte[] plik,klucz;
        
         private void Minimalize(object sender, RoutedEventArgs e)
         {
@@ -54,7 +54,8 @@ namespace POD_Blum_Micali_Generator.View
         private void Szyfrowanie_xor(object sender, RoutedEventArgs e)
         {
             //zmiennaXor.Xor();
-            zapis_binarny();
+            //zapis_binarny();
+            zapis_do_pliku();
         }
 
         private void wczyt_kluczyk(object sender, RoutedEventArgs e)
@@ -73,7 +74,7 @@ namespace POD_Blum_Micali_Generator.View
         {
             OpenFileDialog OpenFileDialog = new OpenFileDialog();
             OpenFileDialog.Title = "Open File...";
-            OpenFileDialog.Filter = "Text File (*.txt)|*.txt";
+            OpenFileDialog.Filter = "Text File (*.*)|*.*";
             //  OpenFileDialog.InitialDirectory = @"C:\";
             if (OpenFileDialog.ShowDialog() == true)
             {
@@ -98,7 +99,7 @@ namespace POD_Blum_Micali_Generator.View
 
             OpenFileDialog OpenFileDialog = new OpenFileDialog();
             OpenFileDialog.Title = "Open KEY File...";
-            OpenFileDialog.Filter = "Text File (*.txt)|*.txt";
+            OpenFileDialog.Filter = "Text File (*.*)|*.*";
             //  OpenFileDialog.InitialDirectory = @"C:\";
             if (OpenFileDialog.ShowDialog() == true)
             {
@@ -115,9 +116,7 @@ namespace POD_Blum_Micali_Generator.View
                 MessageBox.Show("Problem z otwarciem pliku");
             }
             return plik;
-
-
-
+            
         }
 
         public bool[] plik_na_bool()
@@ -129,7 +128,7 @@ namespace POD_Blum_Micali_Generator.View
                 bool[] tmp = new bool[8];
                 byte tmpB = b;
 
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     tmp[i] = b % 2 == 1 ? true : false;
                     tmpB /= 2;
@@ -161,14 +160,14 @@ namespace POD_Blum_Micali_Generator.View
 
         public bool[] Xor()
         {
-            bool[] klucz = klucz_na_bool();
-            bool[] plik = plik_na_bool();
+            bool[] kluczy = klucz_na_bool();
+            bool[] pliky = plik_na_bool();
 
-            bool[] wynik = new bool[plik.Length];
+            wynik = new bool[pliky.Length];
 
-            for (int i = 0; i < plik.Length; i++)
+            for (int i = 0; i < pliky.Length; i++)
             {
-                wynik[i] = klucz[i] ^ plik[i];
+                wynik[i] = kluczy[i] ^ pliky[i];
             }
 
             return wynik;
@@ -178,10 +177,11 @@ namespace POD_Blum_Micali_Generator.View
         {
             bool[] wejscie = Xor();
 
-            byte[] temp = new byte[(wejscie.Length / 8)];
+            byte[] temp = new byte[(wejscie.Length)];
+
             for (int i = 0; i < wejscie.Length; i++)
             {
-                temp[i / 8] += wejscie[i] == true ? (byte)Math.Pow((int)2, (int)i) : (byte)0;
+                temp[i] += wejscie[i] == true ? (byte)Math.Pow((byte)2, (byte)i%8) : (byte)0;
             }
             return temp;
 
@@ -192,10 +192,10 @@ namespace POD_Blum_Micali_Generator.View
             byte[] wyjsice = zapis_binarny();
             SaveFileDialog SaveFileDialog = new SaveFileDialog();
             SaveFileDialog.Title = "Save As...";
-            SaveFileDialog.Filter = "Binary File (*.bin)|*.bin";
-            SaveFileDialog.InitialDirectory = @"C:\";
+            SaveFileDialog.Filter = "Binary File (*.*)|*.*";
+           // SaveFileDialog.InitialDirectory = @"C:\";
 
-            FileStream fs = new FileStream(SaveFileDialog.FileName, FileMode.Create);
+            FileStream fs = new FileStream("wyj.txt", FileMode.Create);
             // Create the writer for data.
             BinaryWriter bw = new BinaryWriter(fs);
 
