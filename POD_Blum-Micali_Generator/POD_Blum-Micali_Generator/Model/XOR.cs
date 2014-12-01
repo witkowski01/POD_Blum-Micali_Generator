@@ -97,9 +97,6 @@ namespace POD_Blum_Micali_Generator.Model
 
         public bool[] Xor()
         {
-            odczyt_zawartosci_pliku();
-            odczyt_zawartosci_klucza();
-
             bool[] klucz = klucz_na_bool();
             bool[] plik = plik_na_bool();
 
