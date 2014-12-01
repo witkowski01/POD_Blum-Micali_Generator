@@ -137,6 +137,12 @@ namespace POD_Blum_Micali_Generator
             i.Show();
         }
 
+        private void Szyfrowanie(object sender, RoutedEventArgs e)
+        {
+            var i = new Szyfrowanie();
+            i.Show();
+        }
+
         /* Teraz zbędne i wyłączone, ale jeśli kiedyś miało by sie przydać to proszę bardzo można odblokować
           
                  private void WczytajButton(object sender, RoutedEventArgs e)  // Wczytaj z pliku   

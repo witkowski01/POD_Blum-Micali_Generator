@@ -20,9 +20,7 @@ namespace POD_Blum_Micali_Generator.Model
         void zapis_zawartosci(string zawartosc)
         {
             var dlg = new Microsoft.Win32.SaveFileDialog { DefaultExt = ".txt", Filter = "Text documents (.txt)|*.txt" };
-
-
-
+            
             // Set filter for file extension and default file extension 
 
 
