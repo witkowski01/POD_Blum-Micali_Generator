@@ -53,9 +53,9 @@ namespace POD_Blum_Micali_Generator.View
                 {
                     wyj_string += getChar(wyj_bool, i);      //Zamiana bool[] na char
                 }
-
+                File.WriteAllText(wyj.Text, wyj_string,Encoding.UTF32);
                 
-                System.IO.File.WriteAllText(ZamienPola.IsChecked == false ? wyj.Text : wej.Text, wyj_string);  //nie wiem dlaczego tylko 58 znaków koduje
+               // System.IO.File.WriteAllText(ZamienPola.IsChecked == false ? wyj.Text : wej.Text, wyj_string);  //nie wiem dlaczego tylko 58 znaków koduje
                
                 MessageBox.Show("Koniec.\nZaszyfrowana wiadomość:\n" + wyj_string ,"Szyfrowanie zakończone",
                     MessageBoxButton.OK, MessageBoxImage.Asterisk);
@@ -92,7 +92,7 @@ namespace POD_Blum_Micali_Generator.View
 
             foreach (var element in wej_bool)              
             {
-                        if (klucz_string.Length < j)
+                        if (klucz_string.Length < wej_string.Length)
                         {
                             MessageBox.Show("Za długi tekst lub \nZa krótki wygenerowany ciąg",
                             " To błąd krytyczny", MessageBoxButton.OK, MessageBoxImage.Error);
