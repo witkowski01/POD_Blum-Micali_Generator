@@ -37,7 +37,8 @@ namespace POD_Blum_Micali_Generator.View
             BMG bmg = new BMG();
             SiG si = new SiG();
             UInt64 sn;
-            BigInteger[] tab01 = new BigInteger[20005];
+            int wielkosc_klucza = 2000000;
+            BigInteger[] tab01 = new BigInteger[wielkosc_klucza];
             var i01 = 0;
 
             //BigInteger bi = new BigInteger(Encoding.UTF8.GetBytes(ATextBox.Text));
@@ -79,7 +80,7 @@ namespace POD_Blum_Micali_Generator.View
             SW.Write(btss);
             SW.Close();
 
-            for (int i = 0; i < 19998; i++)
+            for (int i = 0; i < (wielkosc_klucza-1); i++)
             {
                 btss = blummicali.GetNextRandomBit().ToString();
                 SW = File.AppendText("klucz");
