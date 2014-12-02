@@ -64,6 +64,7 @@ namespace POD_Blum_Micali_Generator.View
             {
                 MessageBox.Show("Błąd:\n" + err, "Błąd krytyczny", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            wyj_string = null;
         }
 
         private bool[] getBool(char znak, int k, bool[] tablica)
