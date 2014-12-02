@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using POD_Blum_Micali_Generator.Model;
 
 
 namespace POD_Blum_Micali_Generator.View
@@ -53,6 +54,19 @@ namespace POD_Blum_Micali_Generator.View
                 {
                     wyj_string += getChar(wyj_bool, i);      //Zamiana bool[] na char
                 }
+
+                var plik = new StreamWriter("posredni.txt", false, Encoding.GetEncoding("UTF-8"));
+                foreach (var b in wyj_bool)
+                {
+                    if(b== true)
+                    plik.Write("1");
+                    else
+                    {
+                        plik.Write("0");
+                    }
+                }
+                plik.Close();
+
                 File.WriteAllText(wyj.Text, wyj_string,Encoding.UTF32);
                 
                // System.IO.File.WriteAllText(ZamienPola.IsChecked == false ? wyj.Text : wej.Text, wyj_string);  //nie wiem dlaczego tylko 58 znaków koduje
@@ -60,6 +74,9 @@ namespace POD_Blum_Micali_Generator.View
                 MessageBox.Show("Koniec.\nZaszyfrowana wiadomość:\n" + wyj_string ,"Szyfrowanie zakończone",
                     MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
+
+
+
             catch (Exception err)
             {
                 MessageBox.Show("Błąd:\n" + err, "Błąd krytyczny", MessageBoxButton.OK, MessageBoxImage.Error);
